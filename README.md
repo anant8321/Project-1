@@ -34,6 +34,7 @@ aws-webapp-terraform/
 ├── envs/
 │   └── dev/
 │       ├── main.tf
+│       ├── provider.tf
 │       ├── backend.tf
 │       ├── variables.tf
 │       ├── terraform.tfvars
