@@ -25,3 +25,9 @@ variable "private_sub_cidrs" {
   description = "list of all private subnet cidrs"
   type = list(string)
 }
+#######################  IAM 
+variable "project_name"{
+  type = string
+  description = "Name of the project"
+  default = "ha-webapp-project"
+}

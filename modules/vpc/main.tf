@@ -20,7 +20,7 @@ resource "aws_internet_gateway" "this" {
 resource "aws_subnet" "public_sub" {
   count = length(var.public_sub_cidrs)
   vpc_id = aws_vpc.this.id
-  availability_zone = var.az_list[count.index]
+  availability_zone = var.az_list[count.index]  // count.index starts from 0
   cidr_block = var.public_sub_cidrs[count.index]
   map_public_ip_on_launch = true
   tags = {

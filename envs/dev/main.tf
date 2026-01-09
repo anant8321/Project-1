@@ -7,3 +7,9 @@ module "vpc" {
   public_sub_cidrs = var.public_sub_cidrs
   private_sub_cidrs = var.private_sub_cidrs
 }
+
+module "iam" {
+  source = "../../modules/iam"
+
+  project_name = "var.project_name"
+}
