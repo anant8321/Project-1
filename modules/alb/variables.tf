@@ -9,3 +9,7 @@ variable "vpc_id" {
 variable "public_sub_ids" {
   type = list(string)
 }
+
+variable "app_port"{
+  type = number
+}

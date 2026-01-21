@@ -31,3 +31,9 @@ variable "project_name"{
   description = "Name of the project"
   default = "ha-webapp-project"
 }
+
+########## ALB
+variable "app_port" {
+  type = number
+  description = "Application's port number"
+}

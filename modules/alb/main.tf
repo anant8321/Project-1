@@ -27,19 +27,19 @@ resource "aws_lb" "this" {
 
 resource "aws_lb_target_group" "this" {
   name = "${var.project_name}-alb-tg"
-  port = 8080
+  port = var.app_port
   protocol = "HTTP"
   vpc_id = var.vpc_id
 
   health_check {
     path = "/"
-    port = 8080
+    port = var.app_port
     protocol = "HTTP"
     interval = 30
     timeout = 5
     healthy_threshold = 2
     unhealthy_threshold = 2
-    matcher = "200"
+    matcher = "200"             # HTTP status code
   }
 }
 
