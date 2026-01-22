@@ -11,3 +11,14 @@ public_sub_cidrs = [ "10.0.1.0/24", "10.0.2.0/24" ]
 private_sub_cidrs = [ "10.0.101.0/24", "10.0.102.0/24" ]
 
 app_port = 8080
+
+ami_id = "ami-0ced6a024bb18ff2e"    # OS
+
+instance_type = "t3.micro"      # CPU & RAM
+
+desired_capacity = 2
+
+min_size = 1
+
+max_size = 3
+
