@@ -42,3 +42,10 @@ module "Compute" {
   max_size = var.max_size
   min_size = var.min_size  
 }
+
+module "monitoring" {
+  source = "../../modules/monitoring"
+
+  project_name = var.project_name
+  asg_name = module.Compute.asg_name
+}

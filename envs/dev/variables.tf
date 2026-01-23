@@ -39,15 +39,12 @@ variable "app_port" {
 }
 
 ######### compute
-
 variable "ami_id" {
   type = string
 }
 variable "instance_type" {
   type = string
 }
-
-
 variable "desired_capacity" {
   type = number
 }

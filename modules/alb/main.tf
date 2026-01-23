@@ -31,15 +31,16 @@ resource "aws_lb_target_group" "this" {
   protocol = "HTTP"
   vpc_id = var.vpc_id
 
+  # can this one EC2(already created) serve traffic ?
   health_check {
     path = "/"
-    port = var.app_port
+    port = var.app_port   # ALB checks EC2 on backend port (8080)
     protocol = "HTTP"
-    interval = 30
-    timeout = 5
-    healthy_threshold = 2
-    unhealthy_threshold = 2
-    matcher = "200"             # HTTP status code
+    interval = 30             # ALB checks every 30 seconds
+    timeout = 5         # Wait 5 seconds for response, No response → failure
+    healthy_threshold = 2   # Needs 2 consecutive successes to mark healthy
+    unhealthy_threshold = 2 # Needs 2 consecutive failures to mark unhealthy
+    matcher = "200"             # expected HTTP status code for healthy
   }
 }
 
