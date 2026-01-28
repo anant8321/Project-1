@@ -16,9 +16,9 @@ ami_id = "ami-0ced6a024bb18ff2e"    # OS
 
 instance_type = "t3.micro"      # CPU & RAM
 
-desired_capacity = 2
+desired_capacity = 4
 
-min_size = 1
+min_size = 2
 
-max_size = 3
+max_size = 6
 
